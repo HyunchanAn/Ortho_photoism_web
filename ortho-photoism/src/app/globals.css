@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Custom Ortho Theme Colors */
+  --color-primary: #0F172A; /* Slate 900 */
+  --color-primary-foreground: #F8FAFC;
+  --color-accent: #0EA5E9; /* Sky 500 */
+  --color-accent-foreground: #FFFFFF;
+  --color-muted: #1E293B; /* Slate 800 */
+  --color-muted-foreground: #94A3B8;
+  --color-border: #334155; /* Slate 700 */
+}
+
+:root {
+  --background: #020617; /* Slate 950 - Dark by default */
+  --foreground: #f8fafc;
+  --border: #1e293b;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* App-like feel */
+}
