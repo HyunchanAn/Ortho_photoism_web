@@ -33,7 +33,8 @@ except ImportError:
 try:
     import mediapipe as mp
     HAS_MEDIAPIPE = True
-except ImportError:
+except Exception:
+    mp = None
     HAS_MEDIAPIPE = False
 
 

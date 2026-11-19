@@ -26,7 +26,8 @@ from torchvision import models, transforms
 try:
     import mediapipe as mp
     HAS_MEDIAPIPE = True
-except ImportError:
+except Exception:
+    mp = None
     HAS_MEDIAPIPE = False
 
 
