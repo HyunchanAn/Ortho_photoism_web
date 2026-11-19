@@ -1,0 +1,21 @@
+# Sensitive clinic / patient backup directories (never commit to Git)
+교정상담실_내원기록_백업/
+*_백업/
+photo_example/
+
+# Environment & secrets
+.env
+.env.*
+
+# Node / Next.js
+node_modules/
+.next/
+dist/
+build/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
