@@ -24,7 +24,14 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision import models, transforms
 
 try:
+    from google.protobuf import message_factory, symbol_database
+    if not hasattr(symbol_database.SymbolDatabase, "GetPrototype"):
+        symbol_database.SymbolDatabase.GetPrototype = staticmethod(message_factory.GetMessageClass)
+    if not hasattr(message_factory.MessageFactory, "GetPrototype"):
+        message_factory.MessageFactory.GetPrototype = staticmethod(message_factory.GetMessageClass)
     import mediapipe as mp
+    from mediapipe.python import solution_base
+    solution_base.SolutionBase._modify_calculator_options = lambda self, proto, params: None
     HAS_MEDIAPIPE = True
 except Exception:
     mp = None
@@ -452,13 +459,13 @@ def main():
     parser.add_argument(
         "--train-dir",
         type=str,
-        default=r"D:\Clinic_Dataset_Vault\training_folder_Extraoral",
+        default=r"D:\Github\Ortho_photoism_data\training_folder_Extraoral",
         help="Directory with existing labeled (.JPG + .json) pairs (e.g. downloaded from Google Drive 3DFaceNorm)",
     )
     parser.add_argument(
         "--target-dir",
         type=str,
-        default=r"D:\Clinic_Dataset_Vault\photos_color\extraoral_candidates",
+        default=r"D:\Github\Ortho_photoism_data\refined_dataset\photos_color\extraoral_candidates",
         help="Directory with unlabeled photos to pseudo-label",
     )
     parser.add_argument(

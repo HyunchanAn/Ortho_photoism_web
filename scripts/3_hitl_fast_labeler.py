@@ -469,7 +469,7 @@ def main():
     parser.add_argument(
         "--dir",
         type=str,
-        default=r"D:\Clinic_Dataset_Vault\photos_color\extraoral_candidates",
+        default=r"D:\Github\Ortho_photoism_data\refined_dataset\photos_color\extraoral_candidates",
         help="Initial image directory to open",
     )
     parser.add_argument(
