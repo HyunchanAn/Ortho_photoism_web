@@ -2,16 +2,25 @@
 교정상담실_내원기록_백업/
 *_백업/
 photo_example/
+training_folder*/
+
+# Trained model weights
+models/
+*.pth
+*.pt
+*.onnx
 
 # Environment & secrets
 .env
 .env.*
 
-# Node / Next.js
+# Node / Next.js / Python
 node_modules/
 .next/
 dist/
 build/
+__pycache__/
+*.py[cod]
 
 # OS / IDE
 .DS_Store
